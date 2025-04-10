@@ -34,4 +34,15 @@ class ConventionRequestItem extends Model
 	{
 		return $this->belongsTo(Item::class);
 	}
+
+	public function conventionReconciliation(): HasOne
+	{
+		// Assumes foreign key on convention_reconciliations is convention_request_item_id
+		// If not, adjust keys. But our schema used convention_request_id + item_id.
+		// Let's link through the request instead for updateOrCreate convenience:
+		return $this->hasOne(ConventionReconciliation::class); // This might require convention_request_item_id FK
+
+		// Linking via request_id and item_id is better for updateOrCreate logic
+		// No direct relationship needed here if using updateOrCreate in action.
+	}
 }

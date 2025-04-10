@@ -35,7 +35,7 @@ class InventoryMovementsRelationManager extends RelationManager
 												->sortable(),
 					   Tables\Columns\TextColumn::make('item.name')->label('Item')->searchable()->sortable(), Tables\Columns\TextColumn::make('quantity')->label('Qty Change')->numeric()
 						   // Optionally format to show +/-
-																																	   ->formatStateUsing(fn(int $state): string => ($state > 0 ? '+' : '') . $state)->sortable(), Tables\Columns\TextColumn::make('fromLocation.name')->label('From Location')->sortable()->placeholder('Source'), // Placeholder for Purchase/Adjustment
+						   ->formatStateUsing(fn(int $state): string => ($state > 0 ? '+' : '') . $state)->sortable(), Tables\Columns\TextColumn::make('fromLocation.name')->label('From Location')->sortable()->placeholder('Source'), // Placeholder for Purchase/Adjustment
 					   Tables\Columns\TextColumn::make('toLocation.name')->label('To Location')->sortable()->placeholder('Usage/Loss'), // Placeholder for Usage/Loss
 					   Tables\Columns\TextColumn::make('movement_type')->label('Type')->badge() // Display as a badge for clarity
 												->color(fn(string $state): string => match ($state) {

@@ -153,7 +153,7 @@ class ConventionReconciliationsRelationManager extends RelationManager
 						  Tables\Columns\TextColumn::make('quantity_kept_by_requester')->label('Kept')->numeric()->sortable(),
 						  Tables\Columns\TextColumn::make('requesterKeptLocation.name')->label('Kept Loc')->sortable()->placeholder('N/A'),
 						  Tables\Columns\TextColumn::make('quantity_lost_damaged')->label('Lost')->numeric()->sortable(),
-						  Tables\Columns\DateColumn::make('reconciliation_date')->label('Date')->sortable(),
+						  Tables\Columns\TextColumn::make('reconciliation_date')->label('Date')->sortable(),
 						  Tables\Columns\TextColumn::make('reconciler.name')->label('Reconciler')->sortable()->toggleable(isToggledHiddenByDefault: TRUE),
 					  ])
 			->filters([
