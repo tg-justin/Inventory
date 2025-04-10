@@ -23,3 +23,5 @@ yarn-error.log
 /.zed
 /vendor
 /vendor
+.env.example
+.editorconfig
